@@ -1,0 +1,106 @@
+.container .title {
+    color: #fff;
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 2rem 1rem 1rem;
+}
+
+.title .query-text {
+    color: #2892d7;
+}
+
+.movies-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3.5rem;
+    padding: 2rem;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.movies-container .movie-card {
+    width: 100%;
+    color: #fff;
+    margin-bottom: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    background-color: #111;
+    padding: .8rem;
+    border-radius: 6px;
+    box-shadow: -1px 2px 13px -2px rgba(40,146,215,0.74);
+-webkit-box-shadow: -1px 2px 13px -2px rgba(40,146,215,0.74);
+-moz-box-shadow: -1px 2px 13px -2px rgba(40,146,215,0.74);
+}
+
+.movies-container .movie-card img {
+    max-width: 100%;
+    border-radius: 6px;
+}
+
+.movies-container .movie-card img,
+.movies-container .movie-card h2,
+.movies-container .movie-card p {
+    margin-bottom: 1rem;
+}
+
+.movies-container .movie-card #star-svg {
+    color: #f7d354;
+}
+
+.movies-container .movie-card a {
+    background-color: #2892d7;
+    border: 2px solid #2892d7;
+    border-radius: 4px;
+    color: #000;
+    padding: 1rem 0.5rem;
+    font-weight: bold;
+    text-align: center;
+    transition: .2s;
+}
+
+.movies-container .movie-card a:hover {
+    color: #2892d7;
+    background-color: transparent;
+}
+
+/* Media Queries
+
+/* 520px - 768px = tablet */
+@media (min-width: 520px) {
+    .movies-container .movie-card {
+        width: 40%;
+        /* background-color: burlywood; */
+    }
+}
+
+/* 768px - 1024px = telas menores, laptops */
+/* @media (min-width: 768px) {
+    .movies-container .movie-card {
+        background-color: cadetblue;
+    }
+} */
+
+/* 1024px - 1200px = desktop */
+/* @media (min-width: 1024px) {
+    .movies-container .movie-card {
+        background-color: coral;
+    }
+} */
+
+/* 1200 e + = telas maiores, tvs */
+@media (min-width: 1200px) {
+    .movies-container .movie-card {
+        width: 25%;
+        /* background-color: darkorchid; */
+    }
+}
+
+/* 8 - OR na media query */
+/* @media (max-width: 200px), (orientation: landscape) {
+    .movies-container .movie-card {
+        background-color: rgb(0, 225, 255);
+    }
+  } */
