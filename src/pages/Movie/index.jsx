@@ -7,9 +7,9 @@ import './Movie.css'
 import MovieCard from "../../components/MovieCard";
 import Loading from "../../components/Loading";
 
-const moviesURL = import.meta.env.VITE_API;
+const api = import.meta.env.VITE_API;
 const apiKey = import.meta.env.VITE_API_KEY;
-
+const type = 'movie'
 
 const Movie = () => {
   const { id } = useParams()
@@ -32,7 +32,7 @@ const Movie = () => {
   }
 
   useEffect(() => {
-    const url = `${moviesURL}${id}?${apiKey}&language=pt-BR`
+    const url = `${api}${type}/${id}?${apiKey}&language=pt-BR`
     getMovie(url)
   }, [])
 

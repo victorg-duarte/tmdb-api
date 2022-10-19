@@ -4,8 +4,9 @@ import MovieCard from "../../components/MovieCard";
 import Loading from "../../components/Loading";
 
 
-const searchURL = import.meta.env.VITE_SEARCH
+const api = import.meta.env.VITE_API
 const apiKey = import.meta.env.VITE_API_KEY
+const type = 'movie'
 
 import '../../assets/css/MoviesGrid.css'
 
@@ -23,7 +24,7 @@ const Search = () => {
   }
 
   useEffect(() => {
-    const url = `${searchURL}?${apiKey}&query=${query}&language=pt-BR`
+    const url = `${api}search/${type}?${apiKey}&query=${query}&language=pt-BR`
     getSearchedMovies(url)
   }, [query])
 

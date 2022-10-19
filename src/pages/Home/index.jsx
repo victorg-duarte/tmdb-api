@@ -4,8 +4,9 @@ import MovieCard from "../../components/MovieCard";
 import '../../assets/css/MoviesGrid.css'
 import Loading from "../../components/Loading";
 
-const moviesURL = import.meta.env.VITE_API;
+const api = import.meta.env.VITE_API;
 const apiKey = import.meta.env.VITE_API_KEY;
+const type = 'movie'
 
 const Home = () => {
   const [topMovies, setTopMovies] = useState([])
@@ -22,8 +23,8 @@ const Home = () => {
   }
 
   useEffect(() => {
-    const topRatedUrl = `${moviesURL}top_rated?${apiKey}&language=pt-BR`
-    getTopRatedMovies(topRatedUrl)
+    const url = `${api}${type}/top_rated?${apiKey}&language=pt-BR`
+    getTopRatedMovies(url)
   }, [])
 
 
