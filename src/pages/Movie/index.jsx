@@ -3,9 +3,7 @@ import { useParams } from "react-router-dom";
 import { BsGraphUp, BsWallet2, BsHourglassSplit, BsFillFileEarmarkTextFill } from "react-icons/bs";
 import { BiMovie } from "react-icons/bi";
 
-// import './Movie.css'
 import { MovieHeader, MovieInfo } from "./styles";
-import MovieCard from "../../components/MovieCard";
 import Loading from "../../components/Loading";
 import { FaStar } from "react-icons/fa";
 import { Trailer } from "../../components/Trailer";
@@ -35,7 +33,7 @@ const Movie = () => {
   }
 
   useEffect(() => {
-    const url = `${api}${path}/${id}?${apiKey}&language=pt-BR`
+    const url = `${api}${path}/${id}?${apiKey}&language=en-US`
     getMovie(url)
   }, [])
 
@@ -51,38 +49,38 @@ const Movie = () => {
               <p className="tagline">{movie.tagline}</p>
               <div className="btn-movie-header">
                 <Trailer idMovie={movie.id} />
-                <a href="#info-movie" className='btn-movie'>Informações</a>
+                <a href="#info-movie" className='btn-movie'>Informations</a>
               </div>
             </div>
           </MovieHeader>
           <MovieInfo id="info-movie">
             <div className="info">
               <h3>
-                <BiMovie /> Gênero:
+                <BiMovie /> Genres:
               </h3>
               <p>{movie.genres.join(', ')}</p>
             </div>
             <div className="info">
               <h3>
-                <BsWallet2 /> Orçamento:
+                <BsWallet2 /> Budget:
               </h3>
               <p>{formatCurrency(movie.budget)}</p>
             </div>
             <div className="info">
               <h3>
-                <BsGraphUp /> Receita:
+                <BsGraphUp /> Revenue:
               </h3>
               <p>{formatCurrency(movie.revenue)}</p>
             </div>
             <div className="info">
               <h3>
-                <BsHourglassSplit /> Duração:
+                <BsHourglassSplit /> Duration:
               </h3>
               <p>{movie.runtime}min</p>
             </div>
             <div className="info description">
               <h3>
-                <BsFillFileEarmarkTextFill /> Descrição:
+                <BsFillFileEarmarkTextFill /> Description:
               </h3>
               <p>{movie.overview}</p>
             </div>

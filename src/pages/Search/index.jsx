@@ -24,14 +24,14 @@ const Search = () => {
   }
 
   useEffect(() => {
-    const url = `${api}search/${type}?${apiKey}&query=${query}&language=pt-BR`
+    const url = `${api}search/${type}?${apiKey}&query=${query}&language=en-US`
     getSearchedMovies(url)
   }, [query])
 
   return (
     <div className="container">
       <h2 className="title">
-        Resultado para: <span className="query-text">{query}</span>
+        Results for: <span className="query-text">{query}</span>
       </h2>
       <div className="movies-container">
         {movies.length === 0 && <Loading />}

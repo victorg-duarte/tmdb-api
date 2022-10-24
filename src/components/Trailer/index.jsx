@@ -4,7 +4,7 @@ import { TrailerVideo } from './styles'
 
 const api = import.meta.env.VITE_API;
 const apiKey = import.meta.env.VITE_API_KEY;
-const language = ['pt-BR', 'en-US']
+const language = ['en-US', 'pt-BR' ]
 
 export const Trailer = ({ idMovie }) => {
   const path = `movie/${idMovie}/videos`
@@ -66,7 +66,7 @@ export const Trailer = ({ idMovie }) => {
           }
         </div>
       </TrailerVideo>
-      <a className='btn-movie' onClick={() => playPauseTrailer(true)}>Assistir trailer</a>
+      <a className='btn-movie' onClick={() => playPauseTrailer(true)}>Watch trailer</a>
     </>
   )
 }

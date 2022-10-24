@@ -9,7 +9,6 @@ export const MovieHeader = styled.div`
   color: #fff;
   width: 100%;
   height: 100vh;
-  margin-bottom: 2rem;
 
   display: grid;
   grid-template-rows: repeat(3, 1fr);
@@ -87,7 +86,7 @@ export const MovieHeader = styled.div`
 export const MovieInfo = styled.div`
 
   max-width: 1600px;
-  padding: 2rem 1rem;
+  margin: 5rem 1rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;

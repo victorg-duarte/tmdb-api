@@ -28,7 +28,7 @@ const Navbar = ({ showSearchMobile, setshowSearchMobile }) => {
         <form id='search-navbar' onSubmit={e => handleSubmit(e)}>
           <input
             type="text"
-            placeholder='Busque um filme'
+            placeholder='Search a movie..'
             onChange={e => setSearch(e.target.value)}
             value={search}
           />
@@ -48,7 +48,7 @@ const Navbar = ({ showSearchMobile, setshowSearchMobile }) => {
         <form onSubmit={e => handleSubmit(e)}>
           <input
             type="text"
-            placeholder='Busque um filme'
+            placeholder='Search a movie..'
             onChange={e => setSearch(e.target.value)}
             value={search}
           />

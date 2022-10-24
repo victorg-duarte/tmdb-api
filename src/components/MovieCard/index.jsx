@@ -12,7 +12,7 @@ const MovieCard = ({ movie, showLink = true }) => {
             <p>
                 <FaStar id="star-svg"/> {movie.vote_average.toFixed(1)}
             </p>
-            {showLink && <Link to={`/movie/${movie.id}`}>Detalhes</Link>}
+            {showLink && <Link to={`/movie/${movie.id}`}>Details</Link>}
         </div>
     )
 }
