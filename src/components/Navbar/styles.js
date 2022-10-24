@@ -83,10 +83,10 @@ export const SearchMobile = styled.div`
   bottom: 0;
   z-index: 5;
   display: flex;
-  visibility:  ${({ showSearchMobile }) => showSearchMobile ? 'auto' : 'auto'};
+  visibility:  ${({ showSearchMobile }) => showSearchMobile ? 'auto' : 'hiddden'};
   align-items: center;
   justify-content: center;
-  background: rgba(17, 18, 17, 0.95);
+  background: rgb(0 0 0 / .5);
   transition: .5s;
   padding: 2rem;
   opacity: 0;

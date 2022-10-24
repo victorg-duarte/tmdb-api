@@ -3,13 +3,17 @@ import { useParams } from "react-router-dom";
 import { BsGraphUp, BsWallet2, BsHourglassSplit, BsFillFileEarmarkTextFill } from "react-icons/bs";
 import { BiMovie } from "react-icons/bi";
 
-import './Movie.css'
+// import './Movie.css'
+import { MovieHeader, MovieInfo } from "./styles";
 import MovieCard from "../../components/MovieCard";
 import Loading from "../../components/Loading";
+import { FaStar } from "react-icons/fa";
+import { Trailer } from "../../components/Trailer";
 
+const imageUrl = import.meta.env.VITE_IMG_BACKDROP;
 const api = import.meta.env.VITE_API;
 const apiKey = import.meta.env.VITE_API_KEY;
-const type = 'movie'
+const path = 'movie'
 
 const Movie = () => {
   const { id } = useParams()
@@ -20,11 +24,10 @@ const Movie = () => {
       const response = await fetch(url)
       const data = await response.json()
       data.genres = data.genres.map(g => g.name)
-      setMovie(data)  
+      setMovie(data)
     } catch (error) {
       console.error('error')
     }
-    
   }
 
   function formatCurrency(number) {
@@ -32,49 +35,62 @@ const Movie = () => {
   }
 
   useEffect(() => {
-    const url = `${api}${type}/${id}?${apiKey}&language=pt-BR`
+    const url = `${api}${path}/${id}?${apiKey}&language=pt-BR`
     getMovie(url)
   }, [])
 
+
+
   return (
-    <div className="movie-page">
-      {movie ? (
-        <div className="movie-detail">
-          <MovieCard movie={movie} showLink={false} />
-          <p className="tagline">{movie.tagline}</p>
-          <div className="info">
-            <h3>
-              <BiMovie /> Gênero:
-            </h3>
-            <p>{movie.genres.join(', ')}</p>
-          </div>
-          <div className="info">
-            <h3>
-              <BsWallet2 /> Orçamento:
-            </h3>
-            <p>{formatCurrency(movie.budget)}</p>
-          </div>
-          <div className="info">
-            <h3>
-              <BsGraphUp /> Receita:
-            </h3>
-            <p>{formatCurrency(movie.revenue)}</p>
-          </div>
-          <div className="info">
-            <h3>
-              <BsHourglassSplit /> Duração:
-            </h3>
-            <p>{movie.runtime}min</p>
-          </div>
-          <div className="info description">
-            <h3>
-              <BsFillFileEarmarkTextFill /> Descrição:
-            </h3>
-            <p>{movie.overview}</p>
-          </div>
-        </div>)
-        : <Loading />}
-    </div>
+    <>
+      {movie ?
+        (<>
+          <MovieHeader url={imageUrl + movie.backdrop_path}>
+            <div className="title">
+              <h1>{movie.title} <span className="average"><FaStar id="star-svg" /> {movie.vote_average.toFixed(1)}</span></h1>
+              <p className="tagline">{movie.tagline}</p>
+              <div className="btn-movie-header">
+                <Trailer idMovie={movie.id} />
+                <a href="#info-movie" className='btn-movie'>Informações</a>
+              </div>
+            </div>
+          </MovieHeader>
+          <MovieInfo id="info-movie">
+            <div className="info">
+              <h3>
+                <BiMovie /> Gênero:
+              </h3>
+              <p>{movie.genres.join(', ')}</p>
+            </div>
+            <div className="info">
+              <h3>
+                <BsWallet2 /> Orçamento:
+              </h3>
+              <p>{formatCurrency(movie.budget)}</p>
+            </div>
+            <div className="info">
+              <h3>
+                <BsGraphUp /> Receita:
+              </h3>
+              <p>{formatCurrency(movie.revenue)}</p>
+            </div>
+            <div className="info">
+              <h3>
+                <BsHourglassSplit /> Duração:
+              </h3>
+              <p>{movie.runtime}min</p>
+            </div>
+            <div className="info description">
+              <h3>
+                <BsFillFileEarmarkTextFill /> Descrição:
+              </h3>
+              <p>{movie.overview}</p>
+            </div>
+          </MovieInfo>
+        </>)
+        : <div style={{ display: 'flex', justifyContent: 'center' }}><Loading /></div>
+      }
+    </>
   );
 };
 
