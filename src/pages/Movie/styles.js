@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const MovieHeader = styled.div`
-  background: linear-gradient(rgba(0, 0, 0, 0.588) 100%, rgba(0, 0, 0, 0) 100%), url(${props => props.url});
+  background: linear-gradient(rgba(0, 0, 0, 0.588) 100%, rgba(0, 0, 0, 0.588) 100%), url(${props => props.url});
   background-position: 0 20%;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -13,19 +13,18 @@ export const MovieHeader = styled.div`
   display: grid;
   grid-template-rows: repeat(3, 1fr);
   grid-template-columns: repeat(3, 1fr);
+  position: relative;
 
   @media (max-width: 520px) {
     background-position: 80%;
   }
 
-  :after {
+  ::before {
     content: '';
     height: 100%;
     width: 100%;
     position: absolute;
-    z-index: 1;
-    background: linear-gradient(to bottom, rgba(0,0,0,0) 0, rgba(0,0,0,0) 80%, #000 100% ); /*rgba(23, 55, 83)*/
-    
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0, rgba(0,0,0,0) 50%, #000 100% );
   }
 
   .title {
