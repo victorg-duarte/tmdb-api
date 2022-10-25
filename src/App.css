@@ -41,8 +41,8 @@ a:hover {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  /* background-color: #173753; */
-  background-color: #000;
+  background-color: #173753;
+  /* background-color: #000; */
 }
 
 .app-container main {
