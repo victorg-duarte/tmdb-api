@@ -84,9 +84,8 @@ export const MovieHeader = styled.div`
 `
 
 export const MovieInfo = styled.div`
-
   max-width: 1600px;
-  margin: 5rem 1rem 0;
+  padding: 5rem 1rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;

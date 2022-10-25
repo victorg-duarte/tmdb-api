@@ -34,8 +34,8 @@ export const Header = styled.header`
 
   #navbar #search-navbar button,
   .search-btn {
-      background-color: #2892d7;
-      border: 2px solid #2892d7;
+      background-color: #173753;
+      border: 2px solid #173753;
       border-radius: 4px;
       color: #fff;
       padding: .3rem;
@@ -47,8 +47,8 @@ export const Header = styled.header`
   }
   #navbar #search-navbar button:hover,
   .search-btn:hover{
-      border: 2px solid #173753;
-      background-color: #173753;
+      border: 2px solid #2892d7;
+      background-color: #2892d7;
   }
 
   .search-mobile-btn {
