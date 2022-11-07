@@ -29,7 +29,7 @@ const Movie = () => {
   }
 
   function formatCurrency(number) {
-    return new Intl.NumberFormat('en-US', { style: 'currency', notation: 'standard', currency: 'USD' }).format(number)
+    return new Intl.NumberFormat('en-US', { style: 'currency', notation: 'compact', currency: 'USD' }).format(number)
   }
 
   useEffect(() => {
