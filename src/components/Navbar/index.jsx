@@ -48,7 +48,7 @@ const Navbar = () => {
           </button>
         </div>
       </nav>
-      <SearchMobile
+      {/* <SearchMobile
         showSearchMobile={showSearchMobile}>
         <IoMdClose onClick={() => setshowSearchMobile(false)} />
         <form onSubmit={e => handleSubmit(e)}>
@@ -65,7 +65,7 @@ const Navbar = () => {
             <BiSearchAlt2 />
           </button>
         </form>
-      </SearchMobile>
+      </SearchMobile> */}
     </Header>
   );
 };

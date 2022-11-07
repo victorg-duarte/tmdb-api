@@ -62,7 +62,7 @@ export const Header = styled.header`
 
   /* Media Queries */
 
-  @media (max-width: 520px) {
+  /* @media (max-width: 520px) {
     .search-mobile-btn  {
       display: inherit;
     }
@@ -70,7 +70,7 @@ export const Header = styled.header`
     #navbar #search-navbar {
       display: none;
     }
-  }
+  } */
 `
 
 export const SearchMobile = styled.div`
@@ -137,10 +137,10 @@ export const SearchMobile = styled.div`
   }
 
 
-  @media (max-width: 520px) {
+  /* @media (max-width: 520px) {
     ${({ showSearchMobile }) => showSearchMobile && css`
     opacity: 1;
     pointer-events: auto;
     `}
-  }
+  } */
 `
