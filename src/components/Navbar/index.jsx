@@ -1,12 +1,13 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { BiSearchAlt2 } from 'react-icons/bi'
 import { GiClapperboard } from 'react-icons/gi'
 import { IoMdClose } from "react-icons/io";
 import { Header, SearchMobile } from "./styles";
 
-const Navbar = ({ showSearchMobile, setshowSearchMobile }) => {
+const Navbar = () => {
   const [search, setSearch] = useState("")
+  const [showSearchMobile, setshowSearchMobile] = useState(false)
   const navigate = useNavigate() // hook do react-router-dom: funcoes de redirecionamento
 
   function handleSubmit(e) {
@@ -17,6 +18,11 @@ const Navbar = ({ showSearchMobile, setshowSearchMobile }) => {
     navigate(`/search?q=${search}`)
     setSearch('')
   }
+
+  useEffect(() => {
+    document.body.style.overflowY = showSearchMobile ? 'hidden' : 'auto';
+  }, [showSearchMobile]);
+
   return (
     <Header>
       <nav id="navbar">

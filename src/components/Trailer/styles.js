@@ -36,8 +36,8 @@ export const TrailerVideo = styled.div`
   }
 
   #youtube-video {
-    width: 60%;
-    height: 80%;
+    width: 1120px;
+    height: 630px;
   }
 
   iframe {
@@ -47,8 +47,8 @@ export const TrailerVideo = styled.div`
 
   @media (max-width: 800px) {
     #youtube-video {
-    width: 100%;
-    height: 80%;
-  }
+      width: 560px;
+      height: 315px;
+    }
   }
 `

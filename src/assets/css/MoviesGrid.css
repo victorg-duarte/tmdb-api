@@ -72,29 +72,16 @@
 @media (min-width: 520px) {
     .movies-container .movie-card {
         width: 40%;
-        /* background-color: burlywood; */
     }
 }
 
 /* 768px - 1024px = telas menores, laptops */
-/* @media (min-width: 768px) {
-    .movies-container .movie-card {
-        background-color: cadetblue;
-    }
-} */
-
 /* 1024px - 1200px = desktop */
-/* @media (min-width: 1024px) {
-    .movies-container .movie-card {
-        background-color: coral;
-    }
-} */
 
 /* 1200 e + = telas maiores, tvs */
 @media (min-width: 1200px) {
     .movies-container .movie-card {
         width: 25%;
-        /* background-color: darkorchid; */
     }
 }
 

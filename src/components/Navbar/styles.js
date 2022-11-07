@@ -6,6 +6,7 @@ export const Header = styled.header`
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    
     padding: 1rem 2rem;
     background-color: #121212;
   }
@@ -83,12 +84,11 @@ export const SearchMobile = styled.div`
   bottom: 0;
   z-index: 5;
   display: flex;
-  visibility:  ${({ showSearchMobile }) => showSearchMobile ? 'auto' : 'hiddden'};
   align-items: center;
   justify-content: center;
   background: rgb(0 0 0 / .5);
   transition: .5s;
-  padding: 2rem;
+  padding: 0 2rem;
   opacity: 0;
   pointer-events: none;
 
@@ -141,7 +141,6 @@ export const SearchMobile = styled.div`
     ${({ showSearchMobile }) => showSearchMobile && css`
     opacity: 1;
     pointer-events: auto;
-    transform: translateY(0px);
-  `}
+    `}
   }
 `

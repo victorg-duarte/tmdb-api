@@ -1,19 +1,17 @@
 import styled from "styled-components";
 
 export const MovieHeader = styled.div`
-  background: linear-gradient(rgba(0, 0, 0, 0.588) 100%, rgba(0, 0, 0, 0.588) 100%), url(${props => props.url});
+  background-image: url(${props => props.url});
   background-position: 0 20%;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  color: #fff;
   width: 100%;
   height: 100vh;
 
   display: grid;
   grid-template-rows: repeat(3, 1fr);
   grid-template-columns: repeat(3, 1fr);
-  position: relative;
 
   @media (max-width: 520px) {
     background-position: 80%;
@@ -24,7 +22,7 @@ export const MovieHeader = styled.div`
     height: 100%;
     width: 100%;
     position: absolute;
-    background: linear-gradient(to bottom, rgba(0,0,0,0) 0, rgba(0,0,0,0) 50%, #000 100% );
+    background: linear-gradient(to bottom, rgba(0,0,0, 0.588) 0, rgba(0,0,0, 0.588) 50%, #000 100% );
   }
 
   .title {
@@ -83,51 +81,19 @@ export const MovieHeader = styled.div`
 `
 
 export const MovieInfo = styled.div`
-  max-width: 1600px;
-  padding: 5rem 1rem 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 2rem 1rem 0;
 
-  .movie-card {
-    max-width: 400px;
+  h1 {
+    margin-bottom: 1.5rem;
     text-align: center;
-  }
-
-  .movie-card img,
-  .movie-card h2,
-  .movie-card p {
-    margin-bottom: 1rem;
-  }
-
-  .movie-card h2 {
-    font-size: 2rem;
-  }
-
-  .movie-card p {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.4rem;
-  }
-
-  .tagline {
-    text-align: center;
-    font-size: 1.3rem;
-    margin-bottom: 2rem;
-    background-color: #6daedb;
-    width: 100%;
-    padding: .5rem 0;
-    letter-spacing: .2rem;
   }
 
   .info {
     margin-bottom: 2rem;
-    align-self: start;
   }
 
   .info h3 {
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
     display: flex;
     align-items: center;
     gap: .5rem;

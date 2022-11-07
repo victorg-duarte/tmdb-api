@@ -4,7 +4,7 @@ import { BsGraphUp, BsWallet2, BsHourglassSplit, BsFillFileEarmarkTextFill } fro
 import { BiMovie } from "react-icons/bi";
 
 import { MovieHeader, MovieInfo } from "./styles";
-// import Loading from "../../components/Loading";
+import Loading from "../../components/Loading";
 import { FaStar } from "react-icons/fa";
 import { Trailer } from "../../components/Trailer";
 
@@ -41,7 +41,7 @@ const Movie = () => {
 
   return (
     <>
-      {movie &&
+      {movie ?
         (<>
           <MovieHeader url={imageUrl + movie.backdrop_path}>
             <div className="title">
@@ -54,6 +54,7 @@ const Movie = () => {
             </div>
           </MovieHeader>
           <MovieInfo id="info-movie">
+            <h1>Details:</h1>
             <div className="info">
               <h3>
                 <BiMovie /> Genres:
@@ -86,7 +87,7 @@ const Movie = () => {
             </div>
           </MovieInfo>
         </>)
-        // : <div style={{ display: 'flex', justifyContent: 'center' }}><Loading /></div>
+        : <div style={{ display: 'flex', justifyContent: 'center' }}><Loading /></div>
       }
     </>
   );
