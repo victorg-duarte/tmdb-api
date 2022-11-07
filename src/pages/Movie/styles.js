@@ -17,7 +17,7 @@ export const MovieHeader = styled.div`
     background-position: 80%;
   }
 
-  ::before {
+  ::before,  ::after {
     content: '';
     height: 100%;
     width: 100%;
